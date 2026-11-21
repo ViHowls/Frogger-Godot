@@ -25,5 +25,9 @@ func _on_car_timer_timeout() -> void:
 	var posMarker = $CarStartPositions.get_children().pick_random() as Marker2D
 	car.position = posMarker.position
 	$Objects.add_child(car)
+	car.connect("body_entered", go_to_title)
+	
+func go_to_title(body):
+	print("player collided wi car")
 	
 	
